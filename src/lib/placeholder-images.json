@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-village",
+      "description": "A beautiful panoramic view of Sabintulung village",
+      "imageUrl": "https://www.cifor-icraf.org/wp-content/uploads/2020/08/49753581241_f2f8216e91_o.jpg",
+      "imageHint": "aerial village"
+    },
+    {
+      "id": "village-head",
+      "description": "Sambutan Kepala Desa",
+      "imageUrl": "https://images.unsplash.com/photo-1580130379902-56f3803c563f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2lhbCUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTQ3NTQ1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "official portrait"
+    },
+    {
+      "id": "history",
+      "description": "An old photograph depicting the history of the village",
+      "imageUrl": "https://www.cifor-icraf.org/wp-content/uploads/2020/08/49753581241_f2f8216e91_o.jpg",
+      "imageHint": "historical village"
+    },
+    {
+      "id": "news-1",
+      "description": "Villagers working together in the fields",
+      "imageUrl": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjB3b3JrfGVufDB8fHx8MTc1OTM0NzY0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "community work"
+    },
+    {
+      "id": "news-2",
+      "description": "A local community event or festival",
+      "imageUrl": "https://images.unsplash.com/photo-1683380159134-053066655cfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxsb2NhbCUyMGZlc3RpdmFsfGVufDB8fHx8MTc1OTM4ODcwMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "local festival"
+    },
+    {
+      "id": "news-3",
+      "description": "Children playing in the village square",
+      "imageUrl": "https://images.unsplash.com/photo-1621354598022-16599af1b8b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjaGlsZHJlbiUyMHBsYXlpbmd8ZW58MHx8fHwxNzU5MzEwMDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "children playing"
+    },
+    {
+      "id": "gov-1",
+      "description": "Portrait of the Village Head",
+      "imageUrl": "https://images.unsplash.com/photo-1638896171606-afd4df813d81?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvZmZpY2lhbCUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTQ3NTQ1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "official portrait"
+    },
+    {
+      "id": "gov-2",
+      "description": "Portrait of the Village Secretary",
+      "imageUrl": "https://images.unsplash.com/photo-1699619093007-c4fb05dcdd0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvZmZpY2lhbCUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTQ3NTQ1NHww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "official portrait"
+    },
+    {
+      "id": "gov-3",
+      "description": "Portrait of the Village Treasurer",
+      "imageUrl": "https://images.unsplash.com/photo-1580130379902-56f3803c563f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxvZmZpY2lhbCUyMHBvcnRyYWl0fGVufDB8fHx8MTc1OTQ3NTQ1NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageHint": "official portrait"
+    },
+    {
+      "id": "infographic-chart",
+      "description": "A 3D chart for infographics",
+      "imageUrl": "https://picsum.photos/seed/infographic1/600/400",
+      "imageHint": "3d chart"
+    },
+    {
+      "id": "total-population",
+      "description": "Illustration of a small, cheerful family",
+      "imageUrl": "https://picsum.photos/seed/family-icon-final/200/200",
+      "imageHint": "family illustration"
+    },
+    {
+      "id": "family-head",
+      "description": "Illustration of a parent hugging a child",
+      "imageUrl": "https://picsum.photos/seed/parent-icon-final/200/200",
+      "imageHint": "parent illustration"
+    },
+    {
+      "id": "female-population",
+      "description": "Illustration of a cheerful woman",
+      "imageUrl": "https://picsum.photos/seed/woman-icon-final/200/200",
+      "imageHint": "woman illustration"
+    },
+    {
+      "id": "male-population",
+      "description": "Illustration of a friendly young man",
+      "imageUrl": "https://picsum.photos/seed/man-icon-final/200/200",
+      "imageHint": "man illustration"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* Light Steel Blue */
+    --foreground: 210 40% 10%; /* Dark Slate Blue */
+    --card: 210 40% 100%; /* White */
+    --card-foreground: 210 40% 10%;
+    --popover: 210 40% 100%;
+    --popover-foreground: 210 40% 10%;
+    --primary: 217 91% 60%; /* #3B82F6 - Vibrant Blue */
+    --primary-foreground: 210 40% 98%; /* Almost white */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 210 40% 10%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 210 40% 45%;
+    --accent: 38 92% 56%; /* #F59E0B - Amber */
+    --accent-foreground: 210 40% 5%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 90%;
+    --input: 210 40% 94%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 38 92% 56%;
+    --chart-3: 217 80% 70%;
+    --chart-4: 38 80% 65%;
+    --chart-5: 217 70% 80%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 210 40% 5%;
+    --foreground: 210 40% 98%;
+    --card: 210 40% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 210 40% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 40% 70%;
+    --accent: 38 92% 56%;
+    --accent-foreground: 210 40% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-foreground;
+  }
+  h2 {
+     @apply text-primary;
+  }
+}
