@@ -27,19 +27,22 @@ export default function AdminBeritaPage() {
     const fetchPosts = async () => {
       setLoading(true);
       const { data, error } = await supabase
-        .from('posts')
+        .from<Post>('posts')
         .select('id, title, excerpt, created_at')
         .eq('category', 'berita')
         .order('created_at', { ascending: false });
 
       if (data) {
         setPosts(data);
+      } else if (error) {
+        console.error('Error fetching posts:', error);
+        // Anda bisa menambahkan state untuk menampilkan pesan error di UI
       }
       setLoading(false);
     };
 
     fetchPosts();
-  }, [supabase]);
+  }, []);
 
   const handleDelete = async (id: number) => {
     if (confirm('Apakah Anda yakin ingin menghapus berita ini?')) {

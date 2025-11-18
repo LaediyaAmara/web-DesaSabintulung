@@ -20,8 +20,8 @@ async function getNews() {
   const supabase = createClient();
   // Beri tahu Supabase tipe data yang kita harapkan untuk mendapatkan 'autocomplete' dan keamanan tipe
   const { data } = await supabase
-    .from('posts')
-    .select<'*', Post>('id, title, excerpt, image_url, image_hint')
+    .from<Post>('posts')
+    .select('id, title, excerpt, image_url, image_hint')
     .eq('category', 'berita')
     .order('created_at', { ascending: false })
     .limit(3);
