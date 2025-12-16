@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
@@ -24,6 +24,9 @@ export default function EditBeritaPage({ params }: { params: { id: string } }) {
   const router = useRouter();
   const supabase = createClient();
   const postId = params.id;
+
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState<Post>({
     title: '',
@@ -70,12 +73,48 @@ export default function EditBeritaPage({ params }: { params: { id: string } }) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setImageFile(e.target.files[0]);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const { error } = await supabase.from('posts').update(formData).eq('id', postId);
+    let imageUrl = formData.image_url;
 
+    // Jika ada file baru yang dipilih, unggah dan ganti URL gambar
+    if (imageFile) {
+      const fileName = `${Date.now()}_${imageFile.name}`;
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('posts-images') // Ganti 'posts-images' dengan nama bucket Anda
+        .upload(fileName, imageFile);
+
+      if (uploadError) {
+        alert('Gagal mengunggah gambar baru: ' + uploadError.message);
+        setIsSubmitting(false);
+        return;
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from('posts-images') // Pastikan nama bucket sama
+        .getPublicUrl(uploadData.path);
+
+      imageUrl = publicUrlData.publicUrl;
+
+      // Opsional: Hapus gambar lama dari storage jika ada
+      if (formData.image_url) {
+        const oldImageName = formData.image_url.split('/').pop();
+        if (oldImageName) {
+          await supabase.storage.from('posts-images').remove([oldImageName]);
+        }
+      }
+    }
+
+    const { error } = await supabase.from('posts').update({ ...formData, image_url: imageUrl }).eq('id', postId);
+    
     if (error) {
       alert('Gagal memperbarui berita: ' + error.message);
       setIsSubmitting(false);
@@ -124,7 +163,11 @@ export default function EditBeritaPage({ params }: { params: { id: string } }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="grid gap-2">
                   <Label htmlFor="image_url">URL Gambar</Label>
-                  <Input id="image_url" name="image_url" value={formData.image_url} onChange={handleChange} />
+                  <Input id="image_url" name="image_url" value={formData.image_url} onChange={handleChange} readOnly placeholder="URL akan terisi otomatis setelah upload" />
+                  {formData.image_url && <img src={formData.image_url} alt="Preview" className="mt-2 rounded-md max-h-40" />}
+                  <Label htmlFor="image_file" className="mt-4">Ganti/Upload Gambar</Label>
+                  <Input id="image_file" type="file" accept="image/*" onChange={handleFileChange} ref={fileInputRef} />
+                  {imageFile && <p className="text-sm text-muted-foreground">File baru: {imageFile.name}</p>}
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="image_hint">Deskripsi Gambar (Hint)</Label>

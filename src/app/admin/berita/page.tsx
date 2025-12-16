@@ -28,8 +28,8 @@ export default function AdminBeritaPage() {
     const fetchPosts = async () => {
       setLoading(true);
       const { data, error } = await supabase
-        .from<Post>('posts')
-        .select('id, title, excerpt, created_at')
+        .from('posts')
+        .select<Post>('id, title, excerpt, created_at')
         .eq('category', 'berita')
         .order('created_at', { ascending: false });
 
@@ -60,8 +60,8 @@ export default function AdminBeritaPage() {
     <div className="flex flex-col gap-8">
       <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-lg">
         <Image
-          src="/pemandangan.png"
-          alt="Pemandangan Desa Sabintulung"
+          src="https://images.unsplash.com/photo-1559915392-03454e576dea"
+          alt="Pemandangan sawah terasering di pedesaan"
           fill
           className="object-cover"
           priority
